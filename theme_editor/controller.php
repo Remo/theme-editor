@@ -31,7 +31,7 @@ class ThemeEditorPackage extends Package {
 
 		//copy themes from PageThemes to ThemeEditorSetup
 		$db = Loader::db();
-		$db_sql = 'INSERT INTO ThemeEditorSetup(ptID,ptHandle,ptName,ptDescription,pkgID) SELECT * FROM PageThemes';
+		$db_sql = 'INSERT INTO ThemeEditorSetup(ptID,ptHandle,ptName,ptDescription,pkgID) SELECT ptID,ptHandle,ptName,ptDescription,pkgID FROM PageThemes';
 		$db->Execute($db_sql);
 	}
 
